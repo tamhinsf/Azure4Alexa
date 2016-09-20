@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Azure4Alexa</title>
+	<meta charset="utf-8" />
+    <script type="text/javascript">
+        function generateLoginLink() {
+            var loginUrl = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize" + window.location.search;
+            document.getElementById("loginLink").setAttribute("href", loginUrl);
+        }
+    </script>
+</head>
+<body onload="generateLoginLink()">
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left:5%; margin-right:5%; margin-top:2%;">
+    <h2>Azure4Alexa</h2>
+
+    <div>
+        <br />
+        <text>It's easy to build and host your Alexa Skill with Visual Studio and Azure!</text>
+        <br/>
+        <br />
+        <text>It's even easy to access Oauth 2.0 protected services such as Microsoft Outlook. After you've followed the instructions in Outlook/Mail.cs, you can link Alexa to your </text>
+        <text>upgraded Outlook.com personal account, or in most cases, your work and school Outlook account. </text>
+        <br />
+        <br />
+        <a id="loginLink">Login to Outlook</a>
+        <br />
+        <small>This link will only work from the Alexa Companion app on your iOS or Android device</small>
+        <br />
+        <br />
+    </div>
+    <div>
+        <br />
+        <small><a href="terms.htm">Terms of Service</a></small>
+        <br />
+        <small><a href="privacy.htm">Privacy Policy</a></small>
+        <br />
+    </div>
+
+    <hr />
+    <footer>
+        <p>Build and Host Your Alexa Skill with Visual Studio and Azure. Learn more: <a href="https://github.com/tamhinsf/azure4alexa">https://github.com/tamhinsf/azure4alexa</a></p>
+    </footer>
+    </div>
+</body>
+</html>

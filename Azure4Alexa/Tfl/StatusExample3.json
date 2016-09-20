@@ -1,0 +1,372 @@
+﻿[
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "bakerloo",
+    "name": "Bakerloo",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.773Z",
+    "modified": "2016-09-07T12:18:05.773Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Bakerloo&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "central",
+    "name": "Central",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.68Z",
+    "modified": "2016-09-07T12:18:05.68Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Central&serviceTypes=Regular"
+      },
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Night",
+        "uri": "/Line/Route?ids=Central&serviceTypes=Night"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "circle",
+    "name": "Circle",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.727Z",
+    "modified": "2016-09-07T12:18:05.727Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "lineId": "circle",
+        "statusSeverity": 5,
+        "statusSeverityDescription": "Part Closure",
+        "reason": "CIRCLE LINE: Saturday 17 and Sunday 18 September, no service between Edgware Road and Hammersmith while we test new signalling. Replacement buses operate between Baker Street and Hammersmith.",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [
+          {
+            "$type": "Tfl.Api.Presentation.Entities.ValidityPeriod, Tfl.Api.Presentation.Entities",
+            "fromDate": "2016-09-17T04:30:00Z",
+            "toDate": "2016-09-19T01:29:00Z",
+            "isNow": false
+          }
+        ],
+        "disruption": {
+          "$type": "Tfl.Api.Presentation.Entities.Disruption, Tfl.Api.Presentation.Entities",
+          "category": "PlannedWork",
+          "categoryDescription": "PlannedWork",
+          "description": "CIRCLE LINE: Saturday 17 and Sunday 18 September, no service between Edgware Road and Hammersmith while we test new signalling. Replacement buses operate between Baker Street and Hammersmith.",
+          "additionalInfo": "Replacement buses operateBaker Street - Edgware Road - Paddington - Royal Oak - Westbourne Park - Ladbroke Grove - Latimer Road - Shepherd's Bush (Central line) (For Wood Lane) - Goldhawk Road (For Shepherd's Bush Market) - Hammersmith",
+          "created": "2016-08-08T15:02:00Z",
+          "affectedRoutes": [ ],
+          "affectedStops": [ ],
+          "isBlocking": true,
+          "closureText": "partClosure"
+        }
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Circle&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "district",
+    "name": "District",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.757Z",
+    "modified": "2016-09-07T12:18:05.757Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=District&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "hammersmith-city",
+    "name": "Hammersmith & City",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.853Z",
+    "modified": "2016-09-07T12:18:05.853Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "lineId": "hammersmith-city",
+        "statusSeverity": 5,
+        "statusSeverityDescription": "Part Closure",
+        "reason": "HAMMERSMITH & CITY LINE: Saturday 17 and Sunday 18 September, no service between Edgware Road and Hammersmith while we test new signalling. Replacement buses operate between Baker Street and Hammersmith.",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [
+          {
+            "$type": "Tfl.Api.Presentation.Entities.ValidityPeriod, Tfl.Api.Presentation.Entities",
+            "fromDate": "2016-09-17T04:30:00Z",
+            "toDate": "2016-09-19T01:29:00Z",
+            "isNow": false
+          }
+        ],
+        "disruption": {
+          "$type": "Tfl.Api.Presentation.Entities.Disruption, Tfl.Api.Presentation.Entities",
+          "category": "PlannedWork",
+          "categoryDescription": "PlannedWork",
+          "description": "HAMMERSMITH & CITY LINE: Saturday 17 and Sunday 18 September, no service between Edgware Road and Hammersmith while we test new signalling. Replacement buses operate between Baker Street and Hammersmith.",
+          "additionalInfo": "Replacement buses operateBaker Street - Edgware Road - Paddington - Royal Oak - Westbourne Park - Ladbroke Grove - Latimer Road - Shepherd's Bush (Central line) (For Wood Lane) - Goldhawk Road (For Shepherd's Bush Market) - Hammersmith",
+          "created": "2016-08-08T15:01:00Z",
+          "affectedRoutes": [ ],
+          "affectedStops": [ ],
+          "isBlocking": true,
+          "closureText": "partClosure"
+        }
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Hammersmith & City&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "jubilee",
+    "name": "Jubilee",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.773Z",
+    "modified": "2016-09-07T12:18:05.773Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Jubilee&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "metropolitan",
+    "name": "Metropolitan",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.79Z",
+    "modified": "2016-09-07T12:18:05.79Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Metropolitan&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "northern",
+    "name": "Northern",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.743Z",
+    "modified": "2016-09-07T12:18:05.743Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "lineId": "northern",
+        "statusSeverity": 5,
+        "statusSeverityDescription": "Part Closure",
+        "reason": "NORTHERN LINE: Saturday 17 and Sunday 18 September, no service between Archway and High Barnet / Mill Hill East. Replacement buses operate. This is to allow for track replacement work at Finchley Central",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [
+          {
+            "$type": "Tfl.Api.Presentation.Entities.ValidityPeriod, Tfl.Api.Presentation.Entities",
+            "fromDate": "2016-09-17T04:30:00Z",
+            "toDate": "2016-09-19T01:29:00Z",
+            "isNow": false
+          }
+        ],
+        "disruption": {
+          "$type": "Tfl.Api.Presentation.Entities.Disruption, Tfl.Api.Presentation.Entities",
+          "category": "PlannedWork",
+          "categoryDescription": "PlannedWork",
+          "description": "NORTHERN LINE: Saturday 17 and Sunday 18 September, no service between Archway and High Barnet / Mill Hill East. Replacement buses operate. This is to allow for track replacement work at Finchley Central",
+          "additionalInfo": "Replacement buses:Service A: High Barnet - Totteridge & Whetstone - Woodside Park - West Finchley - Finchley Central - East Finchley - Highgate - ArchwayService C: Mill Hill East - Finchley Central",
+          "created": "2016-08-08T15:05:00Z",
+          "affectedRoutes": [ ],
+          "affectedStops": [ ],
+          "isBlocking": true,
+          "closureText": "partClosure"
+        }
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Northern&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "piccadilly",
+    "name": "Piccadilly",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.68Z",
+    "modified": "2016-09-07T12:18:05.68Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Piccadilly&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "victoria",
+    "name": "Victoria",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.68Z",
+    "modified": "2016-09-07T12:18:05.68Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Victoria&serviceTypes=Regular"
+      },
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Night",
+        "uri": "/Line/Route?ids=Victoria&serviceTypes=Night"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "waterloo-city",
+    "name": "Waterloo & City",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.79Z",
+    "modified": "2016-09-07T12:18:05.79Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Waterloo & City&serviceTypes=Regular"
+      }
+    ]
+  }
+]

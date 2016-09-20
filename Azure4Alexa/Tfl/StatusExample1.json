@@ -1,0 +1,427 @@
+﻿[
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "bakerloo",
+    "name": "Bakerloo",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.773Z",
+    "modified": "2016-09-07T12:18:05.773Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Bakerloo&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "central",
+    "name": "Central",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.68Z",
+    "modified": "2016-09-07T12:18:05.68Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Central&serviceTypes=Regular"
+      },
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Night",
+        "uri": "/Line/Route?ids=Central&serviceTypes=Night"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "circle",
+    "name": "Circle",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.727Z",
+    "modified": "2016-09-07T12:18:05.727Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "lineId": "circle",
+        "statusSeverity": 9,
+        "statusSeverityDescription": "Minor Delays",
+        "reason": "Circle Line: Minor delays in the anti clockwise direction due to an earlier signal failure at Gloucester Road.GOOD SERVICE Clockwise. ",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [
+          {
+            "$type": "Tfl.Api.Presentation.Entities.ValidityPeriod, Tfl.Api.Presentation.Entities",
+            "fromDate": "2016-09-15T18:03:56Z",
+            "toDate": "2016-09-16T01:29:00Z",
+            "isNow": true
+          }
+        ],
+        "disruption": {
+          "$type": "Tfl.Api.Presentation.Entities.Disruption, Tfl.Api.Presentation.Entities",
+          "category": "RealTime",
+          "categoryDescription": "RealTime",
+          "description": "Circle Line: Minor delays in the anti clockwise direction due to an earlier signal failure at Gloucester Road.GOOD SERVICE Clockwise. ",
+          "affectedRoutes": [ ],
+          "affectedStops": [ ],
+          "isWholeLine": true,
+          "closureText": "minorDelays"
+        }
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Circle&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "district",
+    "name": "District",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.757Z",
+    "modified": "2016-09-07T12:18:05.757Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=District&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "dlr",
+    "name": "DLR",
+    "modeName": "dlr",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.837Z",
+    "modified": "2016-09-07T12:18:05.837Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=DLR&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "hammersmith-city",
+    "name": "Hammersmith & City",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.853Z",
+    "modified": "2016-09-07T12:18:05.853Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Hammersmith & City&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "jubilee",
+    "name": "Jubilee",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.773Z",
+    "modified": "2016-09-07T12:18:05.773Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Jubilee&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "london-overground",
+    "name": "London Overground",
+    "modeName": "overground",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.697Z",
+    "modified": "2016-09-07T12:18:05.697Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=London Overground&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "metropolitan",
+    "name": "Metropolitan",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.79Z",
+    "modified": "2016-09-07T12:18:05.79Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Metropolitan&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "northern",
+    "name": "Northern",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.743Z",
+    "modified": "2016-09-07T12:18:05.743Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Northern&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "piccadilly",
+    "name": "Piccadilly",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.68Z",
+    "modified": "2016-09-07T12:18:05.68Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "lineId": "piccadilly",
+        "statusSeverity": 9,
+        "statusSeverityDescription": "Minor Delays",
+        "reason": "Piccadilly Line: Minor delays between Acton Town and Heathrow Terminals due to an earlier signalling problem at Acton Town. GOOD SERVICE on the rest of the line. ",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [
+          {
+            "$type": "Tfl.Api.Presentation.Entities.ValidityPeriod, Tfl.Api.Presentation.Entities",
+            "fromDate": "2016-09-15T20:27:36Z",
+            "toDate": "2016-09-16T01:29:00Z",
+            "isNow": true
+          }
+        ],
+        "disruption": {
+          "$type": "Tfl.Api.Presentation.Entities.Disruption, Tfl.Api.Presentation.Entities",
+          "category": "RealTime",
+          "categoryDescription": "RealTime",
+          "description": "Piccadilly Line: Minor delays between Acton Town and Heathrow Terminals due to an earlier signalling problem at Acton Town. GOOD SERVICE on the rest of the line. ",
+          "affectedRoutes": [ ],
+          "affectedStops": [ ],
+          "closureText": "minorDelays"
+        }
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Piccadilly&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "tfl-rail",
+    "name": "TfL Rail",
+    "modeName": "tflrail",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.807Z",
+    "modified": "2016-09-07T12:18:05.807Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=TfL Rail&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "victoria",
+    "name": "Victoria",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.68Z",
+    "modified": "2016-09-07T12:18:05.68Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Victoria&serviceTypes=Regular"
+      },
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Night",
+        "uri": "/Line/Route?ids=Victoria&serviceTypes=Night"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "waterloo-city",
+    "name": "Waterloo & City",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.79Z",
+    "modified": "2016-09-07T12:18:05.79Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Waterloo & City&serviceTypes=Regular"
+      }
+    ]
+  }
+]

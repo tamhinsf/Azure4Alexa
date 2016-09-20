@@ -1,0 +1,466 @@
+﻿[
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "bakerloo",
+    "name": "Bakerloo",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.773Z",
+    "modified": "2016-09-07T12:18:05.773Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Bakerloo&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "central",
+    "name": "Central",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.68Z",
+    "modified": "2016-09-07T12:18:05.68Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Central&serviceTypes=Regular"
+      },
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Night",
+        "uri": "/Line/Route?ids=Central&serviceTypes=Night"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "circle",
+    "name": "Circle",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.727Z",
+    "modified": "2016-09-07T12:18:05.727Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "lineId": "circle",
+        "statusSeverity": 20,
+        "statusSeverityDescription": "Service Closed",
+        "reason": "Circle Line: No service due to strike action. A reduced service will operate later today, with Circle line trains running approximately every 20 minutes. The first train is expected to depart Hammersmith at approximately 05.40. ",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [
+          {
+            "$type": "Tfl.Api.Presentation.Entities.ValidityPeriod, Tfl.Api.Presentation.Entities",
+            "fromDate": "2016-09-16T05:05:23Z",
+            "toDate": "2016-09-16T08:05:23Z",
+            "isNow": true
+          }
+        ],
+        "disruption": {
+          "$type": "Tfl.Api.Presentation.Entities.Disruption, Tfl.Api.Presentation.Entities",
+          "category": "RealTime",
+          "categoryDescription": "RealTime",
+          "description": "Circle Line: No service due to strike action. A reduced service will operate later today, with Circle line trains running approximately every 20 minutes. The first train is expected to depart Hammersmith at approximately 05.40. ",
+          "affectedRoutes": [ ],
+          "affectedStops": [ ],
+          "isWholeLine": true,
+          "closureText": "serviceClosed"
+        }
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Circle&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "district",
+    "name": "District",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.757Z",
+    "modified": "2016-09-07T12:18:05.757Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=District&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "dlr",
+    "name": "DLR",
+    "modeName": "dlr",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.837Z",
+    "modified": "2016-09-07T12:18:05.837Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=DLR&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "hammersmith-city",
+    "name": "Hammersmith & City",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.853Z",
+    "modified": "2016-09-07T12:18:05.853Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "lineId": "hammersmith-city",
+        "statusSeverity": 20,
+        "statusSeverityDescription": "Service Closed",
+        "reason": "Hammersmith and City Line: No service due to strike action. A reduced service will operate on the Circle line from approximately 05.40 with trains running every 20 minutes. Use the District or Piccadilly line to complete your journey to Hammersmith. Tickets are also being accepted on local buses. ",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [
+          {
+            "$type": "Tfl.Api.Presentation.Entities.ValidityPeriod, Tfl.Api.Presentation.Entities",
+            "fromDate": "2016-09-16T04:31:27Z",
+            "toDate": "2016-09-16T07:31:27Z",
+            "isNow": true
+          }
+        ],
+        "disruption": {
+          "$type": "Tfl.Api.Presentation.Entities.Disruption, Tfl.Api.Presentation.Entities",
+          "category": "RealTime",
+          "categoryDescription": "RealTime",
+          "description": "Hammersmith and City Line: No service due to strike action. A reduced service will operate on the Circle line from approximately 05.40 with trains running every 20 minutes. Use the District or Piccadilly line to complete your journey to Hammersmith. Tickets are also being accepted on local buses. ",
+          "affectedRoutes": [ ],
+          "affectedStops": [ ],
+          "isWholeLine": true,
+          "closureText": "serviceClosed"
+        }
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Hammersmith & City&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "jubilee",
+    "name": "Jubilee",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.773Z",
+    "modified": "2016-09-07T12:18:05.773Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Jubilee&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "london-overground",
+    "name": "London Overground",
+    "modeName": "overground",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.697Z",
+    "modified": "2016-09-07T12:18:05.697Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "lineId": "london-overground",
+        "statusSeverity": 3,
+        "statusSeverityDescription": "Part Suspended",
+        "reason": "London Overground: No service between Willesden Junction and Richmond due to signalling problems at Richmond. Tickets are being accepted on local buses, London Underground and South West Trains. GOOD SERVICE on other routes. ",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [
+          {
+            "$type": "Tfl.Api.Presentation.Entities.ValidityPeriod, Tfl.Api.Presentation.Entities",
+            "fromDate": "2016-09-16T04:34:22Z",
+            "toDate": "2016-09-16T07:34:22Z",
+            "isNow": true
+          }
+        ],
+        "disruption": {
+          "$type": "Tfl.Api.Presentation.Entities.Disruption, Tfl.Api.Presentation.Entities",
+          "category": "RealTime",
+          "categoryDescription": "RealTime",
+          "description": "London Overground: No service between Willesden Junction and Richmond due to signalling problems at Richmond. Tickets are being accepted on local buses, London Underground and South West Trains. GOOD SERVICE on other routes. ",
+          "affectedRoutes": [ ],
+          "affectedStops": [ ],
+          "isBlocking": true,
+          "closureText": "partSuspended"
+        }
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=London Overground&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "metropolitan",
+    "name": "Metropolitan",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.79Z",
+    "modified": "2016-09-07T12:18:05.79Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Metropolitan&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "northern",
+    "name": "Northern",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.743Z",
+    "modified": "2016-09-07T12:18:05.743Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Northern&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "piccadilly",
+    "name": "Piccadilly",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.68Z",
+    "modified": "2016-09-07T12:18:05.68Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Piccadilly&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "tfl-rail",
+    "name": "TfL Rail",
+    "modeName": "tflrail",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.807Z",
+    "modified": "2016-09-07T12:18:05.807Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=TfL Rail&serviceTypes=Regular"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "victoria",
+    "name": "Victoria",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.68Z",
+    "modified": "2016-09-07T12:18:05.68Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "statusSeverity": 10,
+        "statusSeverityDescription": "Good Service",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [ ]
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Victoria&serviceTypes=Regular"
+      },
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Night",
+        "uri": "/Line/Route?ids=Victoria&serviceTypes=Night"
+      }
+    ]
+  },
+  {
+    "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+    "id": "waterloo-city",
+    "name": "Waterloo & City",
+    "modeName": "tube",
+    "disruptions": [ ],
+    "created": "2016-09-07T12:18:05.79Z",
+    "modified": "2016-09-07T12:18:05.79Z",
+    "lineStatuses": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+        "id": 0,
+        "lineId": "waterloo-city",
+        "statusSeverity": 20,
+        "statusSeverityDescription": "Service Closed",
+        "reason": "Waterloo and City Line: Train service will resume at 06:15. ",
+        "created": "0001-01-01T00:00:00",
+        "validityPeriods": [
+          {
+            "$type": "Tfl.Api.Presentation.Entities.ValidityPeriod, Tfl.Api.Presentation.Entities",
+            "fromDate": "2016-09-16T01:36:25Z",
+            "toDate": "2016-09-16T07:36:25Z",
+            "isNow": true
+          }
+        ],
+        "disruption": {
+          "$type": "Tfl.Api.Presentation.Entities.Disruption, Tfl.Api.Presentation.Entities",
+          "category": "RealTime",
+          "categoryDescription": "RealTime",
+          "description": "Waterloo and City Line: Train service will resume at 06:15. ",
+          "affectedRoutes": [ ],
+          "affectedStops": [ ],
+          "isWholeLine": true,
+          "closureText": "serviceClosed"
+        }
+      }
+    ],
+    "routeSections": [ ],
+    "serviceTypes": [
+      {
+        "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+        "name": "Regular",
+        "uri": "/Line/Route?ids=Waterloo & City&serviceTypes=Regular"
+      }
+    ]
+  }
+]

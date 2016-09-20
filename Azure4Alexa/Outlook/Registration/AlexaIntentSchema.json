@@ -1,0 +1,10 @@
+﻿{
+  "intents": [
+    {
+      "intent": "TflStatusIntent"
+    },
+    {
+      "intent": "OutlookUnreadIntent"
+    }
+  ]
+}

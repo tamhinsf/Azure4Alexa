@@ -1,0 +1,14 @@
+﻿TflStatusIntent is there a good service on the tube 
+TflStatusIntent is there a good service on the underground 
+TflStatusIntent are there any disruptions on the tube
+TflStatusIntent what's the tube status
+OutlookUnreadIntent how many unread emails
+OutlookUnreadIntent how many unread emails do i have
+OutlookUnreadIntent how many unread emails i have
+OutlookUnreadIntent unread emails
+OutlookUnreadIntent do i have any unread emails
+OutlookUnreadIntent how many unread Outlook emails
+OutlookUnreadIntent how many unread Outlook emails do i have
+OutlookUnreadIntent how many unread Outlook emails i have
+OutlookUnreadIntent unread Outlook emails
+OutlookUnreadIntent do i have any unread Outlook emails
