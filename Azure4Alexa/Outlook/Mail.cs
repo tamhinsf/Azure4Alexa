@@ -19,8 +19,8 @@ namespace Azure4Alexa.Outlook
         public static string unreadOutlookEmailsInInbox =
             "https://outlook.office.com/api/v2.0/me/mailfolders/inbox/messages?$count=true&$filter=isread%20eq%20false";
 
-        public static string mailboxNotUpgradedMessage = "Sorry, it looks like your Outlook inbox hasn't been upgraded to work with this skill.  " +
-            "You can easily sign up for a new Outlook.com email address and then try again with your new details.";
+        public static string mailboxNotUpgradedMessage = "Sorry, your Outlook inbox hasn't been upgraded to work with this skill.  " +
+            "Want to try this skill?  You can easily sign up for a new Outlook.com email address and then try again with your new details.";
 
         public static SpeechletResponse GetUnreadEmailCount(Session session, HttpClient httpClient)
         {
@@ -64,7 +64,6 @@ namespace Azure4Alexa.Outlook
 
             string cardBody = "";
             string spokenEmailString = "";
-            string spokenEmailSsml = "";
 
             string emailMaximumNotice = "We'll read the first " + maxEmailsToRead + " unread emails. ";
 
@@ -72,11 +71,11 @@ namespace Azure4Alexa.Outlook
             {
                 case 0:
                     cardBody = "You have no unread email in your Outlook Inbox.";
+                    spokenEmailString = cardBody;
                     break;
                 case 1:
                     cardBody = "You have 1 unread email in your Outlook Inbox. ";
                     spokenEmailString = cardBody + CreateUnreadEmailSpeechString(httpResultString);
-                    spokenEmailSsml = spokenEmailString;
                     break;
                 default:
                     cardBody = "You have " + unreadCount + " unread emails in your Outlook Inbox. ";
@@ -88,13 +87,19 @@ namespace Azure4Alexa.Outlook
                     {
                         spokenEmailString = cardBody + emailMaximumNotice + CreateUnreadEmailSpeechString(httpResultString, maxEmailsToRead);
                     }
-                    spokenEmailSsml = AlexaUtils.AddSpeakTagsAndClean(spokenEmailString);
+                    
                     break;
             }
 
             httpResponseMessage.Dispose();
 
-            AlexaUtils.SimpleIntentResponse simpleIntentResponse = new AlexaUtils.SimpleIntentResponse() { cardText = cardBody, ssmlString = spokenEmailSsml };
+            AlexaUtils.SimpleIntentResponse simpleIntentResponse = 
+                new AlexaUtils.SimpleIntentResponse() {
+                    cardText = cardBody,
+                    ssmlString = AlexaUtils.AddSpeakTagsAndClean(spokenEmailString),
+                    largeImage = "outlook.png",
+                    smallImage = "outlook.png",
+                };
             return AlexaUtils.BuildSpeechletResponse(simpleIntentResponse, true);
         }
 

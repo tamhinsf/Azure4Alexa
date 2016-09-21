@@ -39,8 +39,8 @@ namespace Azure4Alexa.Alexa
         {
             public string cardText { get; set; } = "";
             public string ssmlString { get; set; } = "";
-            public string smallImageUrl { get; set; } = "";
-            public string largeImageUrl { get; set; } = "";
+            public string smallImage { get; set; } = "";
+            public string largeImage { get; set; } = "";
         };
 
         public static string AddSpeakTagsAndClean(string spokenText)
@@ -75,23 +75,30 @@ namespace Azure4Alexa.Alexa
             }
 
 
-            // if HTTPS images are passed, then assume a standard card is wanted
-            // nag: remember the images have to be CORS-accessible and served via HTTP
+            // if images are passed, then assume a standard card is wanted
+            // images should be stored in the ~/Images/ folder and follow these requirements
             
             // JPEG or PNG supported, no larger than 2MB
             // 720x480 - small size recommendation
             // 1200x800 - large size recommendation
 
-            if (simpleIntentResponse.smallImageUrl.StartsWith("https://", StringComparison.InvariantCultureIgnoreCase) &&
-                simpleIntentResponse.largeImageUrl.StartsWith("https://", StringComparison.InvariantCultureIgnoreCase))
+            if (simpleIntentResponse.smallImage != "" && simpleIntentResponse.largeImage != "")
             {
                 StandardCard card = new StandardCard();
                 card.Title = AlexaConstants.AppName;
                 card.Text = simpleIntentResponse.cardText;
+
+                // The trailing slash after the image name is required because we're serving off the image through a Web API controller and
+                // don't want to change the default web project settings
+
+                card.Image = new Image()
+                {
+                    LargeImageUrl = "https://" + System.Web.HttpContext.Current.Request.Url.Host + "/api/alexaimages/" + simpleIntentResponse.largeImage + "/",
+                    SmallImageUrl = "https://" + System.Web.HttpContext.Current.Request.Url.Host + "/api/alexaimages/" + simpleIntentResponse.smallImage + "/",
+                };
+
                 response.Card = card;
 
-                card.Image.SmallImageUrl = simpleIntentResponse.smallImageUrl;
-                card.Image.LargeImageUrl = simpleIntentResponse.largeImageUrl;
             }
             else
             {

@@ -16,10 +16,10 @@ namespace Azure4Alexa.Tfl
     public class Status
     {
 
-        // URL to GET Transport for London Status for all modes of transport
+        // URL to GET Transport for London ("tfl") Status for all modes of transport
         // our example will be limited to just "tube"
         // "https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr,tram,national-rail,cable-car,river-bus,river-tour/Status?detail=False"
-
+        
         // See the StatusExample[1-3].json files in this folder for example results
 
         public static string tflStatusUrl =
@@ -81,7 +81,7 @@ namespace Azure4Alexa.Tfl
                         {
                             stringToRead += "<break time=\"2s\" /> ";
                             stringToRead += j.disruption.description + " ";
-                            stringForCard += j.disruption.description + " \n";
+                            stringForCard += j.disruption.description + " \n\n";
                         }
 
                     }
@@ -98,15 +98,27 @@ namespace Azure4Alexa.Tfl
             }
             else
             {
-                stringToRead = Alexa.AlexaUtils.AddSpeakTagsAndClean(stringToRead);
-                stringForCard = "There are disruptions on the London Underground. The following lines are affected: \n" + stringForCard;
+                stringToRead = Alexa.AlexaUtils.AddSpeakTagsAndClean("There are disruptions on the London Underground. The following lines are affected: " + stringToRead);
+                stringForCard = "There are disruptions on the London Underground. \n\n" + stringForCard;
             }
 
-            return new AlexaUtils.SimpleIntentResponse() { cardText = stringForCard, ssmlString = stringToRead };
+            //return new AlexaUtils.SimpleIntentResponse() { cardText = stringForCard, ssmlString = stringToRead };
 
             // if you want to add images, you can include them in the reply
-            //return new AlexaUtils.SimpleIntentResponse() { cardText = stringForCard, ssmlString = stringToRead,
-            //    largeImageUrl = "https://your-cors-friendly-url", smallImageUrl = "https://your-cors-friendly-url"};
+            // images should be placed into the ~/Images/ folder of this project
+            // 
+
+            // JPEG or PNG supported, no larger than 2MB
+            // 720x480 - small size recommendation
+            // 1200x800 - large size recommendation
+
+            return new AlexaUtils.SimpleIntentResponse()
+            {
+                cardText = stringForCard,
+                ssmlString = stringToRead,
+                largeImage = "msft.png",
+                smallImage = "msft.png",
+            };
 
         }
     }
