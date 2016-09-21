@@ -101,7 +101,7 @@
     <None Include="Alexa\Registration\AlexaSampleUtterances.txt" />
     <None Include="Alexa\Registration\msft-108x108.png" />
     <None Include="Alexa\Registration\msft-512x512.png" />
-    <None Include="Alexa\Registration\msft-logo.png" />
+    <None Include="Alexa\Registration\msft-original-logo.png" />
     <Content Include="Images\msft.png" />
     <Content Include="Images\outlook.png" />
     <Content Include="outlook.htm" />
