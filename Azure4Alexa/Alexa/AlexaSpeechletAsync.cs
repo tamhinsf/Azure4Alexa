@@ -143,6 +143,8 @@ namespace Azure4Alexa.Alexa
                 // you will need to register for a Client ID with Microsoft and configure your skill for Oauth
                 // uncomment the code below when you're ready
 
+                // We'll provide docs on how to do this very very soon
+
                 //case ("OutlookUnreadIntent"):
                 //    return Task.FromResult<SpeechletResponse>(Outlook.Mail.GetUnreadEmailCount(session, httpClient));
 
