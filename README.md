@@ -113,7 +113,7 @@ As a single skill may have multiple intents, it's up to you to parse the incomin
 * Within AlexaUtils.cs, we've defined SimpleIntentResponse class, which you can pass to BuildSpeechletResponse, which will return a SpeechletResponse object.
 * At minimum, an instance of SimpleIntentResponse requires one and only one variable to be set: cardText.  This is the value of the string seen in the Alexa companion app and will be spoken back to the user unless you assign a string to ssmlString.
 
-GetOnLaunchAsyncResult is called by OnLaunchAsync, and therefore run whenver a user invokes your custom skill without an intent (i.e. Alexa, ask <Invocation Name> for help).  It demonstrates how to use SpeechletResponse, BuildSpeechletResponse, and SimpleIntentResponse together in the simplest manner. 
+GetOnLaunchAsyncResult is called by OnLaunchAsync, and therefore run whenver a user invokes your custom skill without an intent (i.e. Alexa, ask \<Invocation Name\> for help).  It demonstrates how to use SpeechletResponse, BuildSpeechletResponse, and SimpleIntentResponse together in the simplest manner. 
 
     private SpeechletResponse GetOnLaunchAsyncResult(Session session)
         {
@@ -151,15 +151,3 @@ If you REALLY REALLY want to use MVC, you can certainly add those components to 
 #### OAuth
 
 We'll update this document at a point in the near future describing how you can integrate with OAuth-enabled services!
-
-
-
-
-
-
-
-
-
-
-
-
