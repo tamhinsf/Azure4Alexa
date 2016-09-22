@@ -15,19 +15,19 @@ Echo, Tap, and Dot Echo users discover and enable your Alexa Custom Skill using 
 Users begin an Alexa session with your Custom Skill by saying:
 
 * Alexa
-* An invocation name, which is the name you've given your skill: i.e. "Azure"
-* A phrase that is associated with an intent, such as "is there a good service on the Tube?" 
+* An Invocation Name, which is the name you've given your skill: i.e. "Azure"
+* A phrase ("is there a good service on the Tube?") that's associated with an Intent. 
 
-An intent corresponds to a feature of your service.  You'll register a list of accepted utterances in the Developer Console so Alexa can match the user’s spoken words to your skill's intents. Here's an example of a set of utterances for the sample service we've included.  Multiple phrases can be provided for a single function (i.e. checking the tube status) as to not enforce a rigid syntax on users. 
+An intent corresponds to a feature of your service.  An utterance is a combination of an intent and a phrase.  You'll register a list of accepted utterances in the Developer Console so Alexa can match the user’s spoken words to your skill's intents. Here's an example of a set of utterances for the sample service we've included.  Multiple phrases can be provided for a single intent (i.e. TflStatusIntent queries the Transport for London Tube status REST API) as to not enforce a rigid spoken syntax on users. 
 
     TflStatusIntent is there a good service on the tube 
     TflStatusIntent is there a good service on the underground 
     TflStatusIntent are there any disruptions on the tube
     TflStatusIntent what's the tube status
 
-While a single skill can only have one invocation name, it can have multiple intents that provide the same, related, or un-related functionality.   
+And while a single skill can only have one invocation name, it can have multiple intents that provide the same, related, or un-related functionality.   
 
-Optionally, intents can make use of custom or pre-defined Alexa slots, which are variable values.  You could define an intent in which the user states the name of a city: “what’s the temperature in \{slot name\}?”, where “\{slot name\}” could be London, San Francisco, or another city.  Alexa will map the value of the spoken slot to a known value, which you can then use in your response to the user.  You can define your own slot values (i.e. a list of transporation lines), or make use of the pre-created ones from Alexa, which include well-known city names, date and times, and region names.  
+Optionally, intents can make use of custom or pre-defined Alexa slots, which are variable values.  You could define an intent in which the user states the name of a city: “what’s the temperature in \{slot name\}?”, where “\{slot name\}” could be London, San Francisco, or another city.  Alexa will map the value of the spoken slot to a known value, which you can then use in your response to the user.  You can define your own slot values (i.e. a list of transporation lines), or make use of the pre-created ones from Alexa, which include well-known cities, date and times, and region names.  
 
 Optionally, users can authenticate to your service.  Alexa provides an OAuth 2.0 authentication framework that also supports token refreshes(!).  You'll enter all of the usual OAuth 2.0 client configuration settings into the Amazon Developer Console: login URL,  client ID, application secret, scopes, etc.  The re-direct destination for your OAuth 2.0 flow will be an Alexa server, which will also be responsible for storing and refreshing your user's access token. When users add your Custom Skill using the companion app on their iOS or Android device, they'll be able to link their account to your skill: specifically, the companion app will launch an embedded browser that sends them to the login URL you identified.  After that, anytime a user invokes your skill, Alexa will send the user's access token to your service so you can make use of it in your code.  
 
@@ -96,7 +96,7 @@ Now, onto configuration and deployment!
 * Re-deploy to Azure
 * Go back to the Test Screen for your Custom Skill.  Re-enter and re-run "is there a good service on the Tube?" in the Service Simulator and you should see the latest status of the London Underground!  
 * Go to the Alexa companion app on your iOS or Android device, and navigate to Skills.  Then go to Your Skills, tap your new Custom Skill, and then enable your Skill.
-* Talk to your Alexa.  Say "Alexa, ask <invocation name> is there a good service on the Tube?".  You should get a verbal reply and a visual card in the companion app! 
+* Talk to your Alexa.  Say "Alexa, ask <Invocation Name> is there a good service on the Tube?".  You should get a verbal reply and a visual card in the companion app! 
 
 ### Explaining the Code
 
@@ -107,13 +107,13 @@ Azure4Alexa is a Web API project.  The main controller is implemented in Alexa -
 * OnLaunchAsync is run when a user invokes your custom skill without an intent
 * OnIntentAsync is run when a user invokes your custom skill with a specific intent
 
-As a single skill may have multiple intents, it's up to you to parse the incoming value provided to you (intentName) and map it to a corresponding function.
+As a single skill may have multiple intents, it's up to you to parse the incoming value provided to you (intentName) within OnIntentAsync and map it to a corresponding function.
 
 * Each of these four methods above return a SpeechletResponse object, which is defined in AlexaSkillsSet.NET 
-* Within AlexaUtils.cs, we've defined SimpleIntentResponse class, which you can pass to SimpleIntentResponse, which will return a SpeechletResponse object.
+* Within AlexaUtils.cs, we've defined SimpleIntentResponse class, which you can pass to BuildSpeechletResponse, which will return a SpeechletResponse object.
 * At minimum, an instance of SimpleIntentResponse requires one and only one variable to be set: cardText.  This is the value of the string seen in the Alexa companion app and will be spoken back to the user unless you assign a string to ssmlString.
 
-GetOnLaunchAsyncResult within AlexaSpeechletAsync.cs is called by OnLaunchAsync, and therefore run whenver a user invokes your custom skill without an intent.  It demonstrates how to use SpeechletResponse, BuildSpeechletResponse, and SimpleIntentResponse together in the simplest manner. 
+GetOnLaunchAsyncResult is called by OnLaunchAsync, and therefore run whenver a user invokes your custom skill without an intent (i.e. Alexa, ask <Invocation Name> for help).  It demonstrates how to use SpeechletResponse, BuildSpeechletResponse, and SimpleIntentResponse together in the simplest manner. 
 
     private SpeechletResponse GetOnLaunchAsyncResult(Session session)
         {
@@ -125,7 +125,7 @@ GetOnLaunchAsyncResult within AlexaSpeechletAsync.cs is called by OnLaunchAsync,
 
 The true parameter passed to BuildSpeechletResponse is a boolean that determines if the user's session should end or continue.  We've set it to true in this example.  
 
-Within OnIntentAsync you'll notice we look for the value of intentRequest to match TflStatusIntent in a case statement.  If you look at AlexaIntentSchema.json and AlexaSampleUtterances.txt, you'll see that TflStatusIntent is an variable we've registered with Alexa.  Thus, Alexa provides us this intent value when a match between what the user has spoken and what we've registered has occurred, and it's now up to us in Tfl.Status.GetResults to create a reply!
+Within OnIntentAsync you'll notice we look for the value of intentRequest to match TflStatusIntent in a case statement.  Remember, TflStatusIntent is the Intent Name we've identified in our utterance file.  Thus, Alexa provides us this intent value when a match between what the user has spoken and what we've registered has occurred, and it's now up to us in Tfl.Status.GetResults to create a reply!
 
 ### Further Topics: Images, Static HTML, and OAuth
 
