@@ -10,23 +10,30 @@ You don’t need Amazon Web Services and AWS Lambdas to create and host your Ale
 Review the [Alexa Custom Skills Documentation](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/overviews/understanding-custom-skills) so you can understand how users interact with skills, and how Alexa will interact with your service.  No time?  Here’s a quick primer.
 
 #### Users
-Echo, Tap, and Dot Echo users discover and enable your Alexa Custom Skill using the Alexa companion application on their iOS and Android devices.  You'll need to register at the Amazon Developer Console in order to develop and publish a Custom Skill, and you can (privately) develop a skill without publishing it to the world.  
+Echo, Tap, and Dot Echo users discover and enable your Alexa Custom Skill using the Alexa companion application on their iOS and Android devices.  You'll need to register at the Amazon Developer Console in order to develop and publish a Custom Skill.  Shy?  Don't worry, you can (privately) develop a skill without publishing it to the world.  
 
 Users begin an Alexa session with your Custom Skill by saying:
 
 * Alexa
 * An invocation name, which is the name you've given your skill: i.e. "Azure"
-* An intent, such as “is there a Good Service on the London Underground?  
+* A phrase that is associated with an intent, such as "is there a good service on the Tube?" 
 
-Combined, the invocation name and intent is known as an utterance.  You'll register a list of accepted utterances in the Developer Console so Alexa can match the user’s spoken words to your skill's functionality.   While a single skill can only have one invocation name, it can have multiple intents that provide the same, related, or un-related functionality.  Multiple utterances can correspond to a single function (i.e. checking the tube status) as to not enforce a rigid phrase to users.  
+An intent corresponds to a feature of your service.  You'll register a list of accepted utterances in the Developer Console so Alexa can match the user’s spoken words to your skill's intents. Here's an example of a set of utterances for the sample service we've included.  Multiple phrases can be provided for a single function (i.e. checking the tube status) as to not enforce a rigid syntax on users. 
+
+    TflStatusIntent is there a good service on the tube 
+    TflStatusIntent is there a good service on the underground 
+    TflStatusIntent are there any disruptions on the tube
+    TflStatusIntent what's the tube status
+
+While a single skill can only have one invocation name, it can have multiple intents that provide the same, related, or un-related functionality.   
 
 Optionally, intents can make use of custom or pre-defined Alexa slots, which are variable values.  You could define an intent in which the user states the name of a city: “what’s the temperature in \{slot name\}?”, where “\{slot name\}” could be London, San Francisco, or another city.  Alexa will map the value of the spoken slot to a known value, which you can then use in your response to the user.  You can define your own slot values (i.e. a list of transporation lines), or make use of the pre-created ones from Alexa, which include well-known city names, date and times, and region names.  
 
-Optionally, users can authenticate to your service.  Alexa provides an OAuth 2.0 authentication framework that also supports token refreshes(!).  You'll enter all of the usual OAuth 2.0 configurations settings into the Developer Console: login URL,  client ID, application secret, scopes, etc.  The re-direct destination for your OAuth 2.0 flow will be an Alexa server, which will also be responsible for storing and refreshing your user's access token. When users add your Custom Skill using the companion app on their iOS or Android device, they'll be able to link their account to your skill: specifically, the companion app will launch an embedded browser that sends them to the login URL you identified.  After that, anytime a user invokes your skill, Alexa will send the user's access token to your service so you can make use of it in your code.  
+Optionally, users can authenticate to your service.  Alexa provides an OAuth 2.0 authentication framework that also supports token refreshes(!).  You'll enter all of the usual OAuth 2.0 client configuration settings into the Amazon Developer Console: login URL,  client ID, application secret, scopes, etc.  The re-direct destination for your OAuth 2.0 flow will be an Alexa server, which will also be responsible for storing and refreshing your user's access token. When users add your Custom Skill using the companion app on their iOS or Android device, they'll be able to link their account to your skill: specifically, the companion app will launch an embedded browser that sends them to the login URL you identified.  After that, anytime a user invokes your skill, Alexa will send the user's access token to your service so you can make use of it in your code.  
 
 #### Your Service
 
-User speak to Alexa, which in turn, parses the words spoken and matches them to skills, utterances, and slots.   If the words spoken correspond to your Custom Skill, Alexa sends JSON POST to your service endpoint.  
+User speak to Alexa, which in turn, parses the words spoken and matches them to skills, intents and, optionally, slot values.   If the words spoken correspond to your Custom Skill, Alexa sends JSON POST to your service endpoint.  
 
 You can gain a deep understanding of the interaction between Alexa and a Custom Skill endpoint here: https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/handling-requests-sent-by-alexa
 
@@ -137,9 +144,22 @@ Alexa requires that all images be served from a CORS-enabled host.  Therefore, w
 
 #### Static HTML
 
-Azure4Alexa is a Web API project that does not include the usual MVC components.  If you'd like to provide a web landing page for your Custom Skill, or are required to provide a Privacy Policy or Terms of Service to pass Amazon's Certification Process, you can simply replace the static HTML documents we've placed into the root of the Azure4Alexa project.
+Azure4Alexa is a Web API project that does not include the usual MVC components.  If you'd like to provide a web landing page for your Custom Skill, or are required to provide a Privacy Policy or Terms of Service to pass Amazon's Certification Process, you can simply replace the static HTML documents we've placed into the root of the Azure4Alexa project - or create new ones of your own.
 
-#### Oauth
+If you REALLY REALLY want to use MVC, you can certainly add those components to the project. They'll peacefully co-exist with the Web API controllers.
+
+#### OAuth
 
 We'll update this document at a point in the near future describing how you can integrate with OAuth-enabled services!
+
+
+
+
+
+
+
+
+
+
+
 
