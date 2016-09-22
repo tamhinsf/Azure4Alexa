@@ -11,8 +11,6 @@ namespace Azure4Alexa.Alexa
 {
     public class AlexaUtils
     {
-
-
         // In a debug environment, you might find inbound request validation to be a nuisance, especially if you're
         // manually generating requests using cURL, Postman or another utility.
         // The #if #endif directives disable validation in DEBUG builds.

@@ -45,10 +45,13 @@ namespace Azure4Alexa.Alexa
             // this function is invoked when a user begins a session with your skill
             // this is a chance to load user data at the start of a session
 
-            // if the inbound request doesn't include your Alexa Skills AppId, return null and exit
+            // if the inbound request doesn't include your Alexa Skills AppId or you haven't updated your
+            // code to include the correct AppId, return a visual and vocal error and do no more
+            // Update the AppId variable in AlexaConstants.cs to resolve this issue
+
             if (AlexaUtils.IsRequestInvalid(session))
             {
-                return null;
+                return Task.FromResult<SpeechletResponse>(InvalidApplicationId(session));
             }
 
             // to-do - up to you
@@ -62,11 +65,15 @@ namespace Azure4Alexa.Alexa
             // this function is invoked when a user ends a session with your skill
             // this is a chance to save user data at the end of a session
 
-            // if the inbound request doesn't include your Alexa Skills AppId, return null and exit
+            // if the inbound request doesn't include your Alexa Skills AppId or you haven't updated your
+            // code to include the correct AppId, return a visual and vocal error and do no more
+            // Update the AppId variable in AlexaConstants.cs to resolve this issue
+
             if (AlexaUtils.IsRequestInvalid(session))
             {
-                return null;
+                return Task.FromResult<SpeechletResponse>(InvalidApplicationId(session));
             }
+
 
             // to-do - up to you
 
@@ -79,10 +86,13 @@ namespace Azure4Alexa.Alexa
         {
             // this function is invoked when the user invokes your skill without an intent
 
-            // if the inbound request doesn't include your Alexa Skills AppId, return null and exit
+            // if the inbound request doesn't include your Alexa Skills AppId or you haven't updated your
+            // code to include the correct AppId, return a visual and vocal error and do no more
+            // Update the AppId variable in AlexaConstants.cs to resolve this issue
+
             if (AlexaUtils.IsRequestInvalid(session))
             {
-                return null;
+                return Task.FromResult<SpeechletResponse>(InvalidApplicationId(session));
             }
 
 
@@ -91,10 +101,13 @@ namespace Azure4Alexa.Alexa
 
         public override Task<SpeechletResponse> OnIntentAsync(IntentRequest intentRequest, Session session)
         {
-            // if the inbound request doesn't include your AppId, return null and exit
+            // if the inbound request doesn't include your Alexa Skills AppId or you haven't updated your
+            // code to include the correct AppId, return a visual and vocal error and do no more
+            // Update the AppId variable in AlexaConstants.cs to resolve this issue
+
             if (AlexaUtils.IsRequestInvalid(session))
             {
-                return null;
+                return Task.FromResult<SpeechletResponse>(InvalidApplicationId(session));
             }
 
             // this function is invoked when Amazon matches what the user said to 
@@ -127,12 +140,11 @@ namespace Azure4Alexa.Alexa
                     return Task.FromResult<SpeechletResponse>(Tfl.Status.GetResults(session, httpClient));
 
                 // Advanced: call the Outlook API and read the number of unread emails and subject and sender of the first five
-                // you will need to register for a clientid with Microsoft and configure your skill for oauth
-                // see Mail.cs in the Outlook folder for directions
+                // you will need to register for a Client ID with Microsoft and configure your skill for Oauth
                 // uncomment the code below when you're ready
 
-                case ("OutlookUnreadIntent"):
-                    return Task.FromResult<SpeechletResponse>(Outlook.Mail.GetUnreadEmailCount(session, httpClient));
+                //case ("OutlookUnreadIntent"):
+                //    return Task.FromResult<SpeechletResponse>(Outlook.Mail.GetUnreadEmailCount(session, httpClient));
 
                 // add your own intent handler
 
@@ -155,6 +167,18 @@ namespace Azure4Alexa.Alexa
             // called by OnIntentAsync if you forget to map an intent to an action
 
             return AlexaUtils.BuildSpeechletResponse(new AlexaUtils.SimpleIntentResponse() { cardText = "Thanks for giving us a try"  }, true);
+        }
+
+
+        private SpeechletResponse InvalidApplicationId(Session session)
+        {
+            // if the inbound request doesn't include your Alexa Skills AppId or you haven't updated your
+            // code to include the correct AppId, return a visual and vocal error and do no more
+            // Update the AppId variable in AlexaConstants.cs to resolve this issue
+
+            return AlexaUtils.BuildSpeechletResponse(new AlexaUtils.SimpleIntentResponse() {
+                cardText = "An invalid Application ID was received from Alexa.  Please update your Visual Studio project " +
+                    "to include the correct value and then re-deploy your Azure project." }, true);
         }
 
     }
