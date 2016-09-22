@@ -151,3 +151,22 @@ If you REALLY REALLY want to use MVC, you can certainly add those components to 
 #### OAuth
 
 We'll update this document at a point in the near future describing how you can integrate with OAuth-enabled services!
+
+
+## Questions and comments
+
+We'd love to get your feedback about this sample. You can send your questions and suggestions to us in the Issues section of this repository.
+
+## Additional resources
+* [AlexaSkillsKit.NET - .NET library to write Alexa skills that's interface-compatible with Amazon's AlexaSkillsKit for Java and matches that functionality:](https://github.com/AreYouFreeBusy/AlexaSkillsKit.NET)
+* [Getting started with Alexa App development for Amazon Echo using .NET on Windows](https://freebusy.io/blog/getting-started-with-alexa-app-development-for-amazon-echo-using-dot-net)
+* [Getting Started with the Alexa Skills Kit](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/getting-started-guide)
+* [Transport for London Unifed API](https://api-portal.tfl.gov.uk/docs)
+
+## Copyright
+
+Copyright (c) 2016 Tam Huynh. All rights reserved. 
+
+
+### Disclaimer ###
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
