@@ -96,7 +96,7 @@ Now, onto configuration and deployment!
 * Re-deploy to Azure
 * Go back to the Test Screen for your Custom Skill.  Re-enter and re-run "is there a good service on the Tube?" in the Service Simulator and you should see the latest status of the London Underground!  
 * Go to the Alexa companion app on your iOS or Android device, and navigate to Skills.  Then go to Your Skills, tap your new Custom Skill, and then enable your Skill.
-* Talk to your Alexa.  Say "Alexa, ask <Invocation Name> is there a good service on the Tube?".  You should get a verbal reply and a visual card in the companion app! 
+* Talk to your Alexa.  Say "Alexa, ask \<Invocation Name\> is there a good service on the Tube?".  You should get a verbal reply and a visual card in the companion app! 
 
 ### Explaining the Code
 
