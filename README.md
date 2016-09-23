@@ -18,7 +18,7 @@ Users begin an Alexa session with your Custom Skill by saying:
 * An Invocation Name, which is the name you've given your skill: i.e. "Azure"
 * A phrase ("is there a good service on the Tube?") that's associated with an Intent. 
 
-An intent corresponds to a feature of your service.  An utterance is a combination of an intent and a phrase.  You'll register a list of accepted utterances in the Developer Console so Alexa can match the user’s spoken words to your skill's intents. Here's an example of a set of utterances for the sample service we've included.  Multiple phrases can be provided for a single intent (i.e. TflStatusIntent queries the Transport for London Tube status REST API) as to not enforce a rigid spoken syntax on users. 
+An intent corresponds to a feature of your skill.  An utterance is a combination of an intent and a phrase.  You'll register a list of accepted utterances in the Developer Console so Alexa can match the user’s spoken words to your skill's intents. Here's an example of a set of utterances for the sample service we've included in Azure4Alexa.  Multiple phrases can be provided for a single intent as to not enforce a rigid spoken syntax on users. TflStatusIntent is a skill that queries the Transport for London Web API to determine the status of the London Underground.
 
     TflStatusIntent is there a good service on the tube 
     TflStatusIntent is there a good service on the underground 
@@ -27,9 +27,9 @@ An intent corresponds to a feature of your service.  An utterance is a combinati
 
 And while a single skill can only have one invocation name, it can have multiple intents that provide the same, related, or un-related functionality.   
 
-Optionally, intents can make use of custom or pre-defined Alexa slots, which are variable values.  You could define an intent in which the user states the name of a city: “what’s the temperature in \{slot name\}?”, where “\{slot name\}” could be London, San Francisco, or another city.  Alexa will map the value of the spoken slot to a known value, which you can then use in your response to the user.  You can define your own slot values (i.e. a list of transporation lines), or make use of the pre-created ones from Alexa, which include well-known cities, date and times, and region names.  
+Optionally, intents can make use of custom or pre-defined Alexa slots, which are variable values.  You could define an intent in which the user states the name of a city in a slot: “what’s the temperature in \{slot name\}?”, where “\{slot name\}” could be London, San Francisco, or another city.  Alexa will map the value of the spoken slot to a known value, which you can then use in your response to the user.  You can define your own slot values (i.e. a list of transporation lines), or make use of the pre-created ones from Alexa, which include well-known cities, date and times, and region names.  
 
-Optionally, users can authenticate to your service.  Alexa provides an OAuth 2.0 authentication framework that also supports token refreshes(!).  You'll enter all of the usual OAuth 2.0 client configuration settings into the Amazon Developer Console: login URL,  client ID, application secret, scopes, etc.  The re-direct destination for your OAuth 2.0 flow will be an Alexa server, which will also be responsible for storing and refreshing your user's access token. When users add your Custom Skill using the companion app on their iOS or Android device, they'll be able to link their account to your skill: specifically, the companion app will launch an embedded browser that sends them to the login URL you identified.  After that, anytime a user invokes your skill, Alexa will send the user's access token to your service so you can make use of it in your code.  
+Optionally, users can authenticate to your service.  Alexa provides an OAuth 2.0  framework that also supports token refreshes(!).  You'll enter all of the usual OAuth 2.0 client configuration settings into the Amazon Developer Console: login URL,  client ID, application secret, scopes, etc.  The re-direct destination for your OAuth 2.0 flow will be an Alexa server, which will also be responsible for storing and refreshing your user's access token. When users add your Custom Skill using the companion app on their iOS or Android device, they'll be able to link their account to your skill: specifically, the companion app will launch an embedded browser that sends them to the login URL you identified.  After that, anytime a user invokes your skill, Alexa will send the user's access token to your service so you can make use of it in your code.  
 
 #### Your Service
 
@@ -50,14 +50,14 @@ Now, onto configuration and deployment!
 * Review the [Alexa Custom Skills Documentation](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/overviews/understanding-custom-skills)
 * Decide if you'll use an actual Alexa device (such as the Amazon Echo) or the Alexa Simulator at [EchoSim.io](https://echosim.io/)
 * Install the Alexa Companion app for iOS or Android
-* Setup your Alexa device or Simluator, and Companion app using the same account that you've used to register as an Alexa Developer.  Why?  Your Custom Skill is only visible to you until you decide to begin the Amazon Custom Skill approval process, and make it available to all Alexa users.   
+* Setup your Alexa device or Simluator, and Companion app using your Alexa Developer account credentials.  Why?  Your Custom Skill is only visible to you until you decide to begin the Amazon Custom Skill approval process, and make it available to all Alexa users.   
 
 ### Setup a Visual Studio and Azure Environment
 
 * Install Visual Studio 2015. Don't have it? Download the free [Visual Studio Community Edition](https://www.visualstudio.com/)
 * Get yourself on Azure, if you're not already. [Free Credits await!](https://azure.microsoft.com)
 * Clone this GitHub repository 
-* Open the Azure4Alexa solution in Visual Studio, right click over the Azure4Alexa project and publish it to Azure as a new  App Service.
+* Open the Azure4Alexa solution in Visual Studio, right click over the Azure4Alexa project and publish it to Azure as a new App Service.
 * In your web browser, go to the HTTPS URL you deployed the project to.  Azure automatically provides you both an HTTPS and HTTP endpoint for your project, located at the same hostname (i.e. https://your-project.azurewebsites.net and http://your-project.azurewebsites.net)
 * If your deployment succeeded, you'll see a static html page that describes this project!
 
@@ -70,24 +70,24 @@ Now, onto configuration and deployment!
     * Write down the "Application Id".  This is a unique value generated by Amazon that you will need to put into your Visual Studio project.
     * Skill Type - Custom Interaction Model
     * Name - Anything you want
-    * Invocation Name - What users will say to activate your skill.  One word works best.
+    * Invocation Name - What users will say to activate your skill.  One word works best (i.e. "Azure")
     * Select Next
-* On the Interaction Model  Screen (left hand navigation)
+* On the Interaction Model Screen 
     * Intent Schema - copy and paste the content of the file called AlexaIntentSchema.json located in this Visual Studio project path: Azure4Alexa -> Alexa -> Registration 
     * Sample Utterances - copy and paste the content of the file called AlexaSampleUtterances.txt located in this Visual Studio project path: Azure4Alexa -> Alexa -> Registration 
     * Select Next
-* On the Configuration Screen (left hand navigation)
+* On the Configuration Screen 
     * Services Endpoint Type is HTTPS
     * HTTPS URL is https://your-project.azurewebsites.net/api/alexa (substitute your-project-azurewebsites.net with your hostname).
     * Account Linking is No
     * Select Next
-* On the SSL Certificate Screen (left hand navigation)
+* On the SSL Certificate Screen 
     * Select "My development endpoint is a sub-domain ..." unless you have separately setup one of the two other options
     * Select Next
-* On the Test Screen (left hand navigation)
+* On the Test Screen 
     * Service Simulator -> Enter Utterance - Type in the phrase "is there a good service on the Tube?"
     * Click the "Ask <invocation name>" button to run your query.  
-    * You'll see a reply in the Service Response window, but that the reply states that the Application ID in your project is incorrect.  This is expected!  You'll need to now go back to Visual Studio and update the variable AppId in AlexaConstants.cs to include the "Application Id" generated by Amazon, which we mentioned further up in these instrucitons.
+    * You'll see a reply in the Service Response window, that states that the Application ID in your project is incorrect.  This is expected!  You'll need to now go back to Visual Studio and update the variable AppId in AlexaConstants.cs to include the "Application Id" generated by Amazon, which we mentioned further up in these instrucitons.
     
 ### Update Your Project and Test
 
@@ -109,11 +109,11 @@ Azure4Alexa is a Web API project.  The main controller is implemented in Alexa -
 
 As a single skill may have multiple intents, it's up to you to parse the incoming value provided to you (intentName) within OnIntentAsync and map it to a corresponding function.
 
-* Each of these four methods above return a SpeechletResponse object, which is defined in AlexaSkillsSet.NET 
-* Within AlexaUtils.cs, we've defined SimpleIntentResponse class, which you can pass to BuildSpeechletResponse, which will return a SpeechletResponse object.
+* Each of the four methods above return a SpeechletResponse object, which is defined in AlexaSkillsSet.NET 
+* Within AlexaUtils.cs, we've defined SimpleIntentResponse class, which you can pass to BuildSpeechletResponse.  The latter will return a SpeechletResponse object.
 * At minimum, an instance of SimpleIntentResponse requires one and only one variable to be set: cardText.  This is the value of the string seen in the Alexa companion app and will be spoken back to the user unless you assign a string to ssmlString.
 
-GetOnLaunchAsyncResult is called by OnLaunchAsync, and therefore run whenver a user invokes your custom skill without an intent (i.e. Alexa, ask \<Invocation Name\> for help).  It demonstrates how to use SpeechletResponse, BuildSpeechletResponse, and SimpleIntentResponse together in the simplest manner. 
+Example: GetOnLaunchAsyncResult is called by OnLaunchAsync, and therefore run whenver a user invokes your custom skill without an intent (i.e. Alexa, ask \<Invocation Name\> for help).  It demonstrates how to use SpeechletResponse, BuildSpeechletResponse, and SimpleIntentResponse together in the simplest manner. 
 
     private SpeechletResponse GetOnLaunchAsyncResult(Session session)
         {
@@ -158,10 +158,10 @@ We'll update this document at a point in the near future describing how you can 
 We'd love to get your feedback about this sample. You can send your questions and suggestions to us in the Issues section of this repository.
 
 ## Additional resources
-* [AlexaSkillsKit.NET - .NET library to write Alexa skills that's interface-compatible with Amazon's AlexaSkillsKit for Java and matches that functionality:](https://github.com/AreYouFreeBusy/AlexaSkillsKit.NET)
+* [AlexaSkillsKit.NET - .NET library to write Alexa skills that's interface-compatible with Amazon's AlexaSkillsKit for Java and matches that functionality](https://github.com/AreYouFreeBusy/AlexaSkillsKit.NET)
 * [Getting started with Alexa App development for Amazon Echo using .NET on Windows](https://freebusy.io/blog/getting-started-with-alexa-app-development-for-amazon-echo-using-dot-net)
 * [Getting Started with the Alexa Skills Kit](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/getting-started-guide)
-* [Transport for London Unifed API](https://api-portal.tfl.gov.uk/docs)
+* [Transport for London Unified API](https://api-portal.tfl.gov.uk/docs)
 
 ## Copyright
 
