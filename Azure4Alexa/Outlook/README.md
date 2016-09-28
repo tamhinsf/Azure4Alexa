@@ -78,7 +78,7 @@ Now, you’ll update your existing Custom Skill to support Account Linking.
      * https://your-project.azurewebsites.net/outlook.htm (substitute your-project-azurewebsites.net with your hostname).
      * Alexa sends the user to this page when they try to link your skill to their Outlook account.
       * Alexa also includes the OAuth 2.0 query string parameters (i.e. client_id) when loading this page.
-      * outlook.htm parses these query string parameters, and uses them to generate a login link to the actual Microsoft sign-in page (i.e. login.microsoft.com)
+      * outlook.htm parses these query string parameters, and uses them to generate a login link to the actual Microsoft sign-in page (i.e. login.microsoftonline.com)
       * You can use this page to further describe what your skill does, as well as provide links to your privacy policy and terms of service.  Some or all of these may be required to gain certification from Amazon.
 * Client Id
   * Paste the Application Id that was assigned to your application on the Microsoft Application Registration Portal.
