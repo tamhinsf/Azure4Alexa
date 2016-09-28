@@ -150,7 +150,7 @@ If you REALLY REALLY want to use MVC, you can certainly add those components to 
 
 #### OAuth
 
-Feeling confident?  You can connect your Custom Skill to Microsoft Outlook using the Outlook REST API, Alexa's Account Linking framework, and Oauth 2.0. [Learn more](Outlook/README.md)
+Feeling confident?  You can connect your Custom Skill to Microsoft Outlook using the Outlook REST API, Alexa's Account Linking framework, and Oauth 2.0. [Learn more](./Azure4Alexa/Outlook/README.md)
 
 
 ## Questions and comments
