@@ -84,7 +84,7 @@ Now, you’ll update your existing Custom Skill to support Account Linking.
   * Paste the Application Id that was assigned to your application on the Microsoft Application Registration Portal.
 * Domain List
   * You'll need to enter all of the hostnames that are used during the Outlook.com OAuth web authentication flow. Why?  The Alexa companion application will not let the user navigate to a page not identified in this list.
-* At minimum, you will need these hostnames:
+  * At minimum, you will need these hostnames:
     * login.microsoftonline.com
     * login.windows.net
     * login.live.com
