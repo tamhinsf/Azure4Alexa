@@ -136,7 +136,7 @@ We've bundled the code needed to access Outlook in the Azure4Alexa project.  How
 In the file called AlexaSpeechletAsync.cs in Azure4Alexa -> Alexa, uncomment these two lines:
 
     //case ("OutlookUnreadIntent"):
-    //    return Task.FromResult<SpeechletResponse>(Outlook.Mail.GetUnreadEmailCount(session, httpClient));
+    //    return await Outlook.Mail.GetUnreadEmailCount(session, httpClient);
 
 Now, the block of code that matches inbound intents from Amazon to functions in your code is looking for the OutlookUnreadIntent we just added Intent Schema and Utterances for!
 
