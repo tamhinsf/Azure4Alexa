@@ -84,7 +84,7 @@ Now, you’ll update your existing Custom Skill to support Account Linking.
   * Paste the Application Id that was assigned to your application on the Microsoft Application Registration Portal.
 * Domain List
   * You'll need to enter all of the hostnames that are used during the Outlook.com OAuth web authentication flow. Why?  The Alexa companion application will not let the user navigate to a page not identified in this list.
-* At minimum, you will need these hostnames:
+  * At minimum, you will need these hostnames:
     * login.microsoftonline.com
     * login.windows.net
     * login.live.com
@@ -160,3 +160,21 @@ Finally!  Ask Alexa, "Alexa, ask \<My Skill Name\>, how many unread Outlook emai
 ### Next Steps
 
 Apply your newly-gained knowledge and create new Azure-hosted Alexa skills that make use of Account Linking and web services.  Microsoft Graph and many, many other services await!  
+
+## Questions and comments
+
+We'd love to get your feedback about this sample. You can send your questions and suggestions to us in the Issues section of this repository.
+
+## Additional resources
+* [Linking an Alexa User with a User in Your System](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/linking-an-alexa-user-with-a-user-in-your-system)
+* [Outlook REST API Overview](https://dev.outlook.com/restapi)
+* [Outlook Mail REST API reference](https://msdn.microsoft.com/office/office365/APi/mail-rest-operations)
+* [Sign-in Microsoft Account & Azure AD users in a single app](https://azure.microsoft.com/en-us/documentation/articles/active-directory-appmodel-v2-overview/)
+
+## Copyright
+
+Copyright (c) 2016 Tam Huynh. All rights reserved. 
+
+
+### Disclaimer ###
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
