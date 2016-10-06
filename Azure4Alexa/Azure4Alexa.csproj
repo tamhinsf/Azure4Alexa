@@ -123,6 +123,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Outlook\Calendar.cs" />
     <Compile Include="Outlook\Mail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tfl\Status.cs" />
@@ -133,6 +134,7 @@
     <Content Include="Tfl\StatusExample1.json" />
     <Content Include="Tfl\StatusExample2.json" />
     <Content Include="Tfl\StatusExample3.json" />
+    <Content Include="Outlook\README.md" />
     <None Include="Properties\PublishProfiles\azure4alexa - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -5,6 +5,9 @@
     },
     {
       "intent": "OutlookUnreadIntent"
+    },
+    {
+      "intent": "OutlookCalendarIntent"
     }
   ]
 }

@@ -18,28 +18,31 @@ namespace Azure4Alexa.Outlook
 
     public class Mail
     {
-        public static string unreadOutlookEmailsInInbox =
+        public static string unreadOutlookEmailsInInboxUri =
             "https://outlook.office.com/api/v2.0/me/mailfolders/inbox/messages?$count=true&$filter=isread%20eq%20false";
 
         public static string mailboxNotUpgradedMessage = "Sorry, your Outlook inbox hasn't been upgraded to work with this skill.  " +
             "Want to try this skill?  You can easily sign up for a new Outlook.com email address and then try again with your new details.";
 
-        public static SpeechletResponse GetUnreadEmailCount(Session session, HttpClient httpClient)
+        public static async Task<SpeechletResponse> GetUnreadEmailCount(Session session, HttpClient httpClient)
+        //public static SpeechletResponse GetUnreadEmailCount(Session session, HttpClient httpClient)
         {
 
             int unreadCount = 0;
-            int maxEmailsToRead = 5;
+            int maxToRead = 5;
             string httpResultString = "";
 
             // Connect to Outlook
 
             httpClient.DefaultRequestHeaders.Clear();
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", session.User.AccessToken);
-            var httpResponseMessage =
-                httpClient.GetAsync(unreadOutlookEmailsInInbox).Result;
+            //var httpResponseMessage =
+            //    httpClient.GetAsync(unreadOutlookEmailsInInbox).Result;
+            var httpResponseMessage = await httpClient.GetAsync(unreadOutlookEmailsInInboxUri);
             if (httpResponseMessage.IsSuccessStatusCode)
             {
-                httpResultString = httpResponseMessage.Content.ReadAsStringAsync().Result;
+                //httpResultString = httpResponseMessage.Content.ReadAsStringAsync().Result;
+                httpResultString = await httpResponseMessage.Content.ReadAsStringAsync();
                 dynamic resultObject = JObject.Parse(httpResultString);
                 unreadCount = resultObject.value.Count;
             }
@@ -65,29 +68,29 @@ namespace Azure4Alexa.Outlook
             }
 
             string cardBody = "";
-            string spokenEmailString = "";
+            string spokenString = "";
 
-            string emailMaximumNotice = "We'll read the first " + maxEmailsToRead + " unread emails. ";
+            string emailMaximumNotice = "We'll read the first " + maxToRead;
 
             switch (unreadCount)
             {
                 case 0:
                     cardBody = "You have no unread email in your Outlook Inbox.";
-                    spokenEmailString = cardBody;
+                    spokenString = cardBody;
                     break;
                 case 1:
                     cardBody = "You have 1 unread email in your Outlook Inbox. ";
-                    spokenEmailString = cardBody + CreateUnreadEmailSpeechString(httpResultString);
+                    spokenString = cardBody + CreateSpeechString(httpResultString);
                     break;
                 default:
                     cardBody = "You have " + unreadCount + " unread emails in your Outlook Inbox. ";
-                    if (unreadCount <= maxEmailsToRead)
+                    if (unreadCount <= maxToRead)
                     {
-                        spokenEmailString = cardBody + CreateUnreadEmailSpeechString(httpResultString, unreadCount);
+                        spokenString = cardBody + CreateSpeechString(httpResultString, unreadCount);
                     }
                     else
                     {
-                        spokenEmailString = cardBody + emailMaximumNotice + CreateUnreadEmailSpeechString(httpResultString, maxEmailsToRead);
+                        spokenString = cardBody + emailMaximumNotice + CreateSpeechString(httpResultString, maxToRead);
                     }
                     
                     break;
@@ -98,28 +101,28 @@ namespace Azure4Alexa.Outlook
             AlexaUtils.SimpleIntentResponse simpleIntentResponse = 
                 new AlexaUtils.SimpleIntentResponse() {
                     cardText = cardBody,
-                    ssmlString = AlexaUtils.AddSpeakTagsAndClean(spokenEmailString),
+                    ssmlString = AlexaUtils.AddSpeakTagsAndClean(spokenString),
                     largeImage = "outlook.png",
                     smallImage = "outlook.png",
                 };
             return AlexaUtils.BuildSpeechletResponse(simpleIntentResponse, true);
         }
 
-        private static string CreateUnreadEmailSpeechString(string resultString, int numEmailsToRead = 1)
+        private static string CreateSpeechString(string resultString, int numToRead = 1)
         {
-            string emailToRead = String.Empty;
+            string stringToRead = String.Empty;
             dynamic resultObject = JObject.Parse(resultString);
 
-            int emailAddedToStringCount = 0;
+            int itemAddedToStringCount = 0;
 
-            for (int i = 0; i < numEmailsToRead; i++)
+            for (int i = 0; i < numToRead; i++)
             {
-                emailToRead += " <break time=\"2s\"/> An email from " +
+                stringToRead += " <break time=\"2s\"/> An email from " +
                   resultObject.value[i].From.EmailAddress.Name + " with subject " + resultObject.value[i].Subject + "  ";
-                emailAddedToStringCount++;
+                itemAddedToStringCount++;
             }
 
-            return emailToRead;
+            return stringToRead;
         }
 
     }

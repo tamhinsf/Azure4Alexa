@@ -82,7 +82,7 @@ namespace Azure4Alexa.Alexa
 
         }
 
-        public override Task<SpeechletResponse> OnLaunchAsync(LaunchRequest launchRequest, Session session)
+        public override async Task<SpeechletResponse> OnLaunchAsync(LaunchRequest launchRequest, Session session)
         {
             // this function is invoked when the user invokes your skill without an intent
 
@@ -92,14 +92,14 @@ namespace Azure4Alexa.Alexa
 
             if (AlexaUtils.IsRequestInvalid(session))
             {
-                return Task.FromResult<SpeechletResponse>(InvalidApplicationId(session));
+                return await Task.FromResult<SpeechletResponse>(InvalidApplicationId(session));
             }
 
 
-            return Task.FromResult<SpeechletResponse>(GetOnLaunchAsyncResult(session));
+            return await Task.FromResult<SpeechletResponse>(GetOnLaunchAsyncResult(session));
         }
-
-        public override Task<SpeechletResponse> OnIntentAsync(IntentRequest intentRequest, Session session)
+        public override async Task<SpeechletResponse> OnIntentAsync(IntentRequest intentRequest, Session session)
+//        public override Task<SpeechletResponse> OnIntentAsync(IntentRequest intentRequest, Session session)
         {
             // if the inbound request doesn't include your Alexa Skills AppId or you haven't updated your
             // code to include the correct AppId, return a visual and vocal error and do no more
@@ -107,7 +107,7 @@ namespace Azure4Alexa.Alexa
 
             if (AlexaUtils.IsRequestInvalid(session))
             {
-                return Task.FromResult<SpeechletResponse>(InvalidApplicationId(session));
+                return await Task.FromResult<SpeechletResponse>(InvalidApplicationId(session));
             }
 
             // this function is invoked when Amazon matches what the user said to 
@@ -137,27 +137,43 @@ namespace Azure4Alexa.Alexa
                 // call the Transport for London (TFL) API and get status
 
                 case ("TflStatusIntent"):
-                    return Task.FromResult<SpeechletResponse>(Tfl.Status.GetResults(session, httpClient));
+                    return await Tfl.Status.GetResults(session, httpClient);
+                    //return Task.FromResult<SpeechletResponse>(Tfl.Status.GetResults(session, httpClient));
 
                 // Advanced: call the Outlook API and read the number of unread emails and subject and sender of the first five
                 // you will need to register for a Client ID with Microsoft and configure your skill for Oauth
                 // uncomment the code below when you're ready
 
-                // We'll provide docs on how to do this very very soon
+                // See README.md in the Outlook folder
 
                 //case ("OutlookUnreadIntent"):
-                //    return Task.FromResult<SpeechletResponse>(Outlook.Mail.GetUnreadEmailCount(session, httpClient));
+                //    return await Outlook.Mail.GetUnreadEmailCount(session, httpClient);
+                //return Task.FromResult<SpeechletResponse>(Outlook.Mail.GetUnreadEmailCount(session, httpClient));
+
+                // If you're feeling lucky - this intent reads your Outlook calendar
+                // You'll need to add this scope to the Alexa Config Portal
+                // https://outlook.office.com/calendars.read
+                // https://outlook.office.com/mailboxsettings.readwrite
+                // 
+                // uncomment the case statement below
+
+                // then unlink/link your skill and sign in again
+
+                //case ("OutlookCalendarIntent"):
+                //    return await Outlook.Calendar.GetOutlookEventCount(session, httpClient);
 
                 // add your own intent handler
 
                 // case ("YourCustomIntent"):
-                //   return Task.FromResult<SpeechletResponse>(YourCustomIntentClass(session, whateverYouNeedToPass));
+                //   return await YourCustomIntentClass(session, whateverYouNeedToPass);
+                //   invalid pattern with change // return Task.FromResult<SpeechletResponse>(YourCustomIntentClass(session, whateverYouNeedToPass));
 
                 // did you forget to implement an intent?
                 // just send the user to the intent-less utterance
 
                 default:
-                    return Task.FromResult<SpeechletResponse>(GetOnLaunchAsyncResult(session));
+                    return await Task.FromResult<SpeechletResponse>(GetOnLaunchAsyncResult(session));
+                    //return Task.FromResult<SpeechletResponse>(GetOnLaunchAsyncResult(session));
             }
 
         }

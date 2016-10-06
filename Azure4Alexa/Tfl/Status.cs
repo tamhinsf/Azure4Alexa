@@ -29,7 +29,8 @@ namespace Azure4Alexa.Tfl
         // Call the remote web service.  Invoked from AlexaSpeechletAsync
         // Then, call another function with the raw JSON results to generate the spoken text and card text
 
-        public static SpeechletResponse GetResults(Session session, HttpClient httpClient)
+        public static async Task<SpeechletResponse> GetResults(Session session, HttpClient httpClient)
+        //public static SpeechletResponse GetResults(Session session, HttpClient httpClient)
         {
 
             string httpResultString = "";
@@ -38,11 +39,13 @@ namespace Azure4Alexa.Tfl
 
             httpClient.DefaultRequestHeaders.Clear();
 
-            var httpResponseMessage =
-                httpClient.GetAsync(tflStatusUrl).Result;
+            //var httpResponseMessage =
+            //    httpClient.GetAsync(tflStatusUrl).Result;
+            var httpResponseMessage = await httpClient.GetAsync(tflStatusUrl);
             if (httpResponseMessage.IsSuccessStatusCode)
             {
-                httpResultString = httpResponseMessage.Content.ReadAsStringAsync().Result;
+                //httpResultString = httpResponseMessage.Content.ReadAsStringAsync().Result;
+                httpResultString = await httpResponseMessage.Content.ReadAsStringAsync();
             }
             else
             {

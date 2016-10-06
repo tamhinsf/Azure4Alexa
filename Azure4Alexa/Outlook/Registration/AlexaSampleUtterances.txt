@@ -12,3 +12,8 @@ OutlookUnreadIntent how many unread Outlook emails do i have
 OutlookUnreadIntent how many unread Outlook emails i have
 OutlookUnreadIntent unread Outlook emails
 OutlookUnreadIntent do i have any unread Outlook emails
+OutlookCalendarIntent what's on my calendar today
+OutlookCalendarIntent how many events do i have today
+OutlookCalendarIntent what's on my Outlook Calendar for today
+OutlookCalendarIntent what am i doing today
+OutlookCalendarIntent what's going on today
