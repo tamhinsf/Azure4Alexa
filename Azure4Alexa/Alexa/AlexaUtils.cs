@@ -21,8 +21,15 @@ namespace Azure4Alexa.Alexa
 #if DEBUG
             return false;
 #endif
+            // in production, you'd probably want to do the check as follows:
 
-            if (session.Application.Id != AlexaConstants.AppId)
+            //if (session.Application.Id != AlexaConstants.AppId)
+
+            // In development, you might have a single instance of this service and multiple different Alexa skills pointing 
+            // at it.  Structuring the AppId check in this manner lets you have a single string (AlexaConstants.AppId) containing all your
+            // valid AppIds.  Lazy, but it works.
+
+            if (!AlexaConstants.AppId.Contains(session.Application.Id))
             {
                 return true;
             }
