@@ -46,20 +46,7 @@ namespace AlexaSkillsKit.Json
                     request = new LaunchRequest(requestId, timestamp);
                     break;
                 case "IntentRequest":
-                    string intentName = "";
-                    intentName = requestJson.Value<JObject>("intent").Value<string>("name");
-                    if (intentName == "AMAZON.NextIntent")
-                    {
-                        request = new AudioIntentRequest(requestId, timestamp,
-                            Intent.FromJson(requestJson.Value<JObject>("intent")));
-                        return new SpeechletRequestEnvelope
-                        {
-                            Request = request,
-                            Version = json.Value<string>("version"),
-                            Context = Context.FromJson(json.Value<JObject>("context"))
-                        };
-                    }
-                    request = new IntentRequest(requestId, timestamp,
+                    request = new IntentRequest(requestId, timestamp, 
                         Intent.FromJson(requestJson.Value<JObject>("intent")));
                     break;
                 case "SessionStartedRequest":

@@ -1,4 +1,5 @@
-﻿//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
+﻿//  New file created by Tam Huynh (tamhinsf)
+//  Copyright 2015 Stefan Negritoiu (FreeBusy). See LICENSE file for more information.
 
 using System;
 using AlexaSkillsKit.Slu;
