@@ -146,8 +146,8 @@ namespace Azure4Alexa.Alexa
 
                 // See README.md in the Outlook folder
 
-                //case ("OutlookUnreadIntent"):
-                //    return await Outlook.Mail.GetUnreadEmailCount(session, httpClient);
+                case ("OutlookUnreadIntent"):
+                    return await Outlook.Mail.GetUnreadEmailCount(session, httpClient);
                 //return Task.FromResult<SpeechletResponse>(Outlook.Mail.GetUnreadEmailCount(session, httpClient));
 
                 // If you're feeling lucky - this intent reads your Outlook calendar
@@ -166,20 +166,20 @@ namespace Azure4Alexa.Alexa
 
                 // then unlink/link your skill and sign in again
 
-                //case ("OutlookCalendarIntent"):
-                //    return await Outlook.Calendar.GetOutlookEventCount(session, httpClient);
+                case ("OutlookCalendarIntent"):
+                    return await Outlook.Calendar.GetOutlookEventCount(session, httpClient);
 
                 // If you're feeling really lucky:
                 // call the Microsoft Groove Music API using pre-created intents provided by Alexa
 
-                //case ("AMAZON.ChooseAction<object@MusicCreativeWork>"):
-                //    return await Groove.Music.PlayGrooveMusic(session, httpClient, intentRequest);
+                case ("AMAZON.ChooseAction<object@MusicCreativeWork>"):
+                    return await Groove.Music.PlayGrooveMusic(session, httpClient, intentRequest);
 
                 // pre-created intents provided by Alexa don't work (well) with playlists, so we 
                 // created this one below to handle things
 
-                //case ("PlaylistPlay"):
-                //    return await Groove.Music.PlayGroovePlaylist(session, httpClient, intentRequest);
+                case ("PlaylistPlay"):
+                    return await Groove.Music.PlayGroovePlaylist(session, httpClient, intentRequest);
 
                 // add your own intent handler
 
