@@ -1,8 +1,8 @@
-﻿## Connect Alexa to Microsoft Groove Music
+## Connect Alexa to Microsoft Groove Music
 
-“Alexa, ask Groove to play the album Gold by Abba"
-"Alexa, ask Groove to play the song Dancing Queen by Abba"
-"Alexa, ask Groove to play playlist 1"
+* “Alexa, ask Groove to play the album Gold by Abba"
+* "Alexa, ask Groove to play the song Dancing Queen by Abba"
+* "Alexa, ask Groove to play playlist 1"
 
 Let's connect your Echo, Dot Echo, and Tap to Microsoft Groove and your OneDrive Music!  We'll make combined use of the Groove REST API, Alexa's Account Linking framework, and Microsoft Account. When you're done, you'll be able to ask Alexa to play OneDrive hosted songs, albums, and playlists from your Microsoft Groove Music account.
 
