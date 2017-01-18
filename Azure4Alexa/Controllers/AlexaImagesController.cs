@@ -45,17 +45,36 @@ namespace Azure4Alexa.Controllers
 
             try
             {
+                //to complete : code to get the song / album image based on music id
+
+                //if (id.StartsWith("music"))
+                //{
+
+                //    var httpClient = new HttpClient();
+                //    var imageUrl = await Groove.Music.GetImageUrl(id, httpClient).ConfigureAwait(false);
+
+                //    var httpResponseMessage = await httpClient.GetByteArrayAsync(imageUrl).ConfigureAwait(false);
+
+                //    var result = new HttpResponseMessage(HttpStatusCode.OK);
+                //    result.Content = new ByteArrayContent(httpResponseMessage);
+                //    result.Content.Headers.ContentType = new MediaTypeHeaderValue("image/jpg");
+                //    return result;
+                //}
+
                 var imageData = File.ReadAllBytes(HostingEnvironment.MapPath("~/Images/") + id);
                 var result = new HttpResponseMessage(HttpStatusCode.OK);
                 result.Content = new ByteArrayContent(imageData);
                 result.Content.Headers.ContentType = new MediaTypeHeaderValue(imageType);
                 return result;
+
             }
             catch
             {
                 return null;
             }
+
         }
 
     }
 }
+

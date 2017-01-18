@@ -43,10 +43,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AlexaSkillsKit, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AlexaSkillsKit.NET.1.5.1\lib\net45\AlexaSkillsKit.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
       <Private>True</Private>
@@ -56,8 +52,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
@@ -102,6 +98,8 @@
     <None Include="Alexa\Registration\msft-108x108.png" />
     <None Include="Alexa\Registration\msft-512x512.png" />
     <None Include="Alexa\Registration\msft-original-logo.png" />
+    <Content Include="Groove\Registration\AlexaSampleUtterances.txt" />
+    <Content Include="Images\groove.png" />
     <Content Include="Images\msft.png" />
     <Content Include="Images\outlook.png" />
     <Content Include="outlook.htm" />
@@ -123,6 +121,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Groove\Music.cs" />
     <Compile Include="Outlook\Calendar.cs" />
     <Compile Include="Outlook\Mail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,6 +134,8 @@
     <Content Include="Tfl\StatusExample2.json" />
     <Content Include="Tfl\StatusExample3.json" />
     <Content Include="Outlook\README.md" />
+    <Content Include="Groove\Registration\AlexaIntentSchema.json" />
+    <Content Include="Groove\README.md" />
     <None Include="Properties\PublishProfiles\azure4alexa - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -146,6 +147,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlexaSkillsKit.Lib\AlexaSkillsKit.Lib.csproj">
+      <Project>{0ec882a8-aaca-4bd5-b449-72f20fdb8586}</Project>
+      <Name>AlexaSkillsKit.Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

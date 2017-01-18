@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure4Alexa", "Azure4Alexa\Azure4Alexa.csproj", "{F1259ABA-1623-4465-AEAD-6BE25825AA10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexaSkillsKit.Lib", "AlexaSkillsKit.Lib\AlexaSkillsKit.Lib.csproj", "{0EC882A8-AACA-4BD5-B449-72F20FDB8586}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F1259ABA-1623-4465-AEAD-6BE25825AA10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1259ABA-1623-4465-AEAD-6BE25825AA10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1259ABA-1623-4465-AEAD-6BE25825AA10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EC882A8-AACA-4BD5-B449-72F20FDB8586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EC882A8-AACA-4BD5-B449-72F20FDB8586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EC882A8-AACA-4BD5-B449-72F20FDB8586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EC882A8-AACA-4BD5-B449-72F20FDB8586}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

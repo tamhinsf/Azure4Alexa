@@ -1,0 +1,25 @@
+﻿{
+  "intents": [
+    {
+      "intent": "AMAZON.ChooseAction<object@MusicCreativeWork>"
+    },
+    {
+      "intent": "AMAZON.PauseIntent"
+    },
+    {
+      "intent": "AMAZON.ResumeIntent"
+    },
+    {
+      "intent": "TflStatusIntent"
+    },
+    {
+      "intent": "PlaylistPlay",
+      "slots": [
+        {
+          "name": "PlaylistNumber",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    }
+  ]
+}
