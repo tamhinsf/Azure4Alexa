@@ -4,6 +4,7 @@ Use your C# and Azure knowledge to create Alexa Custom Skills from the comfort o
 
 You don’t need Amazon Web Services and AWS Lambdas to create and host your Alexa Custom Skill.  Get started today, and reach millions of of Echo, Tap, and Echo Dot users!   
 
+Special Note: We've created a forked version of the awesome AlexaSkillsKit.NET that implements Alexa's support for audio streaming. Our starter kit now includes and references this forked version, which is backwards compatible with the Outlook Mail and Calendar skills we've also bundled.
 
 ### Review the Basics
 
