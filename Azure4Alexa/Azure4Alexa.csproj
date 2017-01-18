@@ -148,12 +148,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AlexaSkillsKit.Lib\AlexaSkillsKit.Lib.csproj">
-      <Project>{0ec882a8-aaca-4bd5-b449-72f20fdb8586}</Project>
-      <Name>AlexaSkillsKit.Lib</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
