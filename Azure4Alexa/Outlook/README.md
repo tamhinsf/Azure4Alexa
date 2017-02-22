@@ -89,6 +89,8 @@ Now, you’ll update your existing Custom Skill to support Account Linking.
     * login.windows.net
     * login.live.com
     * account.live.com
+    * login-us.microsoftonline.com
+    * login.microsoftonline.de 
   *  If your organization has customized the login experience by introducing additional screens (i.e. a redirect to https://your-company.sts.domain.com), you'll now need to enter the hostname from each of these additional webpages into the Amazon Developer Console.  
     * Tip: Open a new browser window in private mode, sign in to your Office 365 or Exchange Online account, and record the URLs that are part of the experience. If there's a hostname that's not included in the list above, add it.
     * Technical Note: If your organization is using Active Directory Federation Services (ADFS), you'll typically encounter these additional login pages. 
