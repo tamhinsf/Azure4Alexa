@@ -99,7 +99,7 @@ Now, you’ll update your existing Custom Skill to support Account Linking.
 * Authorization Grant Type
   * Auth Code Grant (not Implicit Grant)
   * Access Token URI 
-    * https://login.live.com/oauth20_authorize.srf
+    * https://login.live.com/oauth20_token.srf
   * Client Secret
     * Paste the Application Secret value you wrote down from the Microsoft Application Registration Portal.  If you forgot to do this, you can immediately generate a new one on the Microsoft site.  
   * Client Authentication Scheme
