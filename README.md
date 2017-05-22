@@ -1,6 +1,6 @@
-## Create and Host Alexa Custom Skills using .NET and Azure  
+## Create and Host Alexa Custom Skills for your Echo using .NET and Azure  
 
-Use your C# and Azure knowledge to create Alexa Custom Skills from the comfort of Visual Studio!  Our Azure4Alexa Visual Studio project features the excellent [AlexaSkillsKit.NET](https://github.com/AreYouFreeBusy/AlexaSkillsKit.NET) package and demonstrates how you can accept a user's Alexa request, query a web service, and respond in both visual and spoken form.   
+Use your C# and Azure knowledge to create Alexa Custom Skills for your Amazon Echo the comfort of Visual Studio!  Our Azure4Alexa Visual Studio project features the excellent [AlexaSkillsKit.NET](https://github.com/AreYouFreeBusy/AlexaSkillsKit.NET) package and demonstrates how you can accept a user's Alexa request, query a web service, and respond in both visual and spoken form.   
 
 You don’t need Amazon Web Services and AWS Lambdas to create and host your Alexa Custom Skill.  Get started today, and reach millions of of Echo, Tap, and Echo Dot users!   
 
