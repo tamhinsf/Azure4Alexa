@@ -46,9 +46,6 @@ namespace Azure4Alexa.Alexa
             public string ssmlString { get; set; } = "";
             public string smallImage { get; set; } = "";
             public string largeImage { get; set; } = "";
-            public string musicUrl { get; set; } = "";
-            public string msgId { get; set; } = "";
-            public string musicAction { get; set; } = "";
         };
 
         public static string AddSpeakTagsAndClean(string spokenText)
@@ -64,93 +61,6 @@ namespace Azure4Alexa.Alexa
 
             SpeechletResponse response = new SpeechletResponse();
             response.ShouldEndSession = shouldEndSession;
-
-            List<Directives> directives = new List<Directives>();
-
-            // if there's a value present for musicUrl, this then generate the directives
-            // required for Echo to play the requested track 
-
-            if (simpleIntentResponse.musicUrl != "")
-            {
-                // figure out if we are dealing with a multi-track album
-                // the token we send Echo is in this format if so:
-                // <MusicId>?<Index>
-
-                string[] items = simpleIntentResponse.msgId.Split('?');
-                int msgAlbumIndex = -1;
-                string msgAlbumId = "";
-
-                // if there are two members of the array item[] then
-                // we are dealing with a multi-track album
-
-                if (items.Length == 2)
-                {
-                    msgAlbumId = items[0];
-                    msgAlbumIndex = int.Parse(items[1]);
-                }
-
-                if (msgAlbumIndex < 1 || simpleIntentResponse.musicAction == "AMAZON.NextIntent")
-                {
-                    directives = new List<Directives>()
-                    {
-                        new Directives()
-                        {
-                            type = "AudioPlayer.Play",
-                            playBehavior = "REPLACE_ALL",
-                            audioItem = new Directives.AudioItem()
-                            {
-                                stream = new Directives.Stream()
-                                        {
-                                            offsetInMilliseconds = 0,
-                                            token = simpleIntentResponse.msgId,
-                                            url = simpleIntentResponse.musicUrl,
-                                        }
-                            },
-                        }
-                    };
-
-                    // the next intent doesn't require a card to be generated
-
-                    if (simpleIntentResponse.musicAction == "AMAZON.NextIntent")
-                    {
-                        response.Directives = directives;
-                        return response;
-                    }
-                }
-                else
-                {
-                    int previousIndex = msgAlbumIndex - 1;
-                    string previousToken = msgAlbumId + "?" + previousIndex;
-
-                    directives = new List<Directives>()
-                    {
-                        new Directives()
-                        {
-                            type = "AudioPlayer.Play",
-                            playBehavior = "ENQUEUE",
-                            audioItem = new Directives.AudioItem()
-                            {
-                                stream = new Directives.Stream()
-                                {
-                                    offsetInMilliseconds = 0,
-                                    token = simpleIntentResponse.msgId,
-                                    url = simpleIntentResponse.musicUrl,
-                                    expectedPreviousToken = previousToken,
-                                }
-                            },
-                        }
-                    };
-
-                    // the enqueue intent can not have a card associated with it
-                    // otherwise, Alexa will return an error
-
-                    response.Directives = directives;
-                    return response;
-                }
-                response.Directives = directives;
-            }
-
-
 
             // Create the speechlet response from SimpleIntentResponse.
             // If there's an ssmlString use that as the spoken reply

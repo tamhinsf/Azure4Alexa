@@ -102,7 +102,6 @@
     <None Include="Alexa\Registration\msft-108x108.png" />
     <None Include="Alexa\Registration\msft-512x512.png" />
     <None Include="Alexa\Registration\msft-original-logo.png" />
-    <Content Include="Groove\Registration\AlexaSampleUtterances.txt" />
     <Content Include="Images\groove.png" />
     <Content Include="Images\msft.png" />
     <Content Include="Images\outlook.png" />
@@ -125,7 +124,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Groove\Music.cs" />
     <Compile Include="Outlook\Calendar.cs" />
     <Compile Include="Outlook\Mail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,8 +136,6 @@
     <Content Include="Tfl\StatusExample2.json" />
     <Content Include="Tfl\StatusExample3.json" />
     <Content Include="Outlook\README.md" />
-    <Content Include="Groove\Registration\AlexaIntentSchema.json" />
-    <Content Include="Groove\README.md" />
     <None Include="Properties\PublishProfiles\azure4alexa - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

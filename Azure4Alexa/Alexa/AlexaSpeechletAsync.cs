@@ -169,18 +169,6 @@ namespace Azure4Alexa.Alexa
                 //case ("OutlookCalendarIntent"):
                 //    return await Outlook.Calendar.GetOutlookEventCount(session, httpClient);
 
-                // If you're feeling really lucky:
-                // call the Microsoft Groove Music API using pre-created intents provided by Alexa
-
-                //case ("AMAZON.ChooseAction<object@MusicCreativeWork>"):
-                //    return await Groove.Music.PlayGrooveMusic(session, httpClient, intentRequest);
-
-                // pre-created intents provided by Alexa don't work (well) with playlists, so we 
-                // created this one below to handle things
-
-                //case ("PlaylistPlay"):
-                //    return await Groove.Music.PlayGroovePlaylist(session, httpClient, intentRequest);
-
                 // add your own intent handler
 
                 // case ("YourCustomIntent"):
@@ -217,31 +205,6 @@ namespace Azure4Alexa.Alexa
                 cardText = "An invalid Application ID was received from Alexa.  Please update your Visual Studio project " +
                     "to include the correct value and then re-deploy your Azure project."
             }, true);
-        }
-
-        // handle the enqueuing of the next track in a multi-track album, which can occur after Alexa informs your
-        // service (this service) that the current track has begun.
-
-        public override async Task<SpeechletResponse> OnAudioPlayerAsync(AudioPlayerRequest audioPlayerRequest,
-            Context context)
-        {
-            var httpClient = new HttpClient();
-            return await Groove.Music.EnqueueGrooveMusic(context, httpClient, "ENQUEUE");
-        }
-
-        // handle the user asking for the next track in an album or playlist 
-        // i.e. "Alexa, Next".  This can be expanded to the other AudioPlayer intents, such as repeat, back, etc.
-
-        public override async Task<SpeechletResponse> OnAudioIntentAsync(AudioIntentRequest audioIntentRequest,
-    Context context)
-        {
-            var httpClient = new HttpClient();
-            if (audioIntentRequest.Intent.Name == "AMAZON.NextIntent")
-            {
-                return await Groove.Music.EnqueueGrooveMusic(context, httpClient, "AMAZON.NextIntent");
-            }
-            return null;
-
         }
     }
 }
