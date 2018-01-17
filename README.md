@@ -92,7 +92,7 @@ Now, onto configuration and deployment!
     
 ### Update Your Project and Test
 
-* In Visual Studio, open AlexaContants.cs which you'll find in Azure4Alexa -> Alexa.
+* In Visual Studio, open Web.config which you'll find in the root folder "Azure4Alexa".
 * Update the value of AppId to be the "Application Id" assigned to your skill by Alexa
 * Re-deploy to Azure
 * Go back to the Test Screen for your Custom Skill.  Re-enter and re-run "is there a good service on the Tube?" in the Service Simulator and you should see the latest status of the London Underground!  
